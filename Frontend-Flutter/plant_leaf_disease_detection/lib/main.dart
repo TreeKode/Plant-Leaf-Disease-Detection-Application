@@ -18,11 +18,10 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(
             backgroundColor: const Color(0xFF151026),
             title: Text('TreeKode'),
-            leading: GestureDetector(
-              onTap: () {/*listener to be added here */},
-              child: Icon(
-                 Icons.menu,
+            leading: Icon(
+              Icons.menu,
             ),
+
           ),
           body: Center(child: Column(children: <Widget>[
 
