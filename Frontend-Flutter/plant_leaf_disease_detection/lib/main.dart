@@ -1,50 +1,46 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  runApp(
+    MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.green,
-          appBar: AppBar(
-            backgroundColor: const Color(0xFF151026),
-            title: Text('TreeKode'),
-            leading: Icon(
-              Icons.menu,
-            ),
+        backgroundColor: Colors.white,
+        appBar:
+            PreferredSize(
+              preferredSize: Size.fromHeight(80.0),
+              child: AppBar(
+                  title: Center(child: Text('TreeKode')),
+                  backgroundColor : Colors.green[900],
+                  // leading: Icon(Icons.menu),
 
-          ),
-          body: Center(child: Column(children: <Widget>[
-
-            Container(
-              margin: EdgeInsets.all(25),
-              child: FlatButton(
-                child: Text('Image Preview', style: TextStyle(fontSize: 20.0),),
-                onPressed: () {},
               ),
             ),
-            Container(
-              margin: EdgeInsets.all(25),
-              child: FlatButton(
-                child: Text('Detect', style: TextStyle(fontSize: 20.0),),
-                color: const Color(0xFF151026),
-                textColor: Colors.white,
-                onPressed: () {},
-              ),
+        bottomNavigationBar: BottomNavigationBar(
+         type: BottomNavigationBarType.fixed,
+          onTap: (value){
+           //respond
+          },
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.account_box_sharp),
+              label: 'Profile',
+            ) ,
+            BottomNavigationBarItem(
+                icon: Icon(Icons.menu),
+              label: 'Menu',
             ),
-
-          ]
-          ))
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bookmark),
+              label: 'Search',
+            ),
+          ],
+        ),
       ),
-    );
-  }
+    ),
+  );
 }
+
