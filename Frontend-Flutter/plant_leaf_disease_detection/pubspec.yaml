@@ -45,9 +45,16 @@ flutter:
   assets:
     - Assets/
     - Assets/Images/
+    - Assets/Images/avatar.jpg
   fonts:
     - family: Great_Vibes
       fonts:
         - asset: Assets/Fonts/Great_Vibes/GreatVibes-Regular.ttf
+    - family: Work_Sans
+      fonts:
+        - asset: Assets/Fonts/Work_Sans/static/WorkSans-Bold.ttf
+        - asset: Assets/Fonts/Work_Sans/static/WorkSans-Regular.ttf
+
+
 
 
