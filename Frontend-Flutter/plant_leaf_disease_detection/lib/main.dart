@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -14,12 +16,29 @@ class BigApp extends StatelessWidget {
       home:
       Scaffold(
         backgroundColor: Colors.white,
+        extendBodyBehindAppBar: true,
         body:
         Scaffold(
           backgroundColor: Color.fromRGBO(51, 240, 127, 0.52),
+          extendBodyBehindAppBar: true,
+          appBar: AppBar(
+            title: Text('TreeKode',
+              style: TextStyle(
+                fontFamily: ('Work_Sands'),
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+
+                //fontStyle: FontStyle.italic,
+              ),
+            ),
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            foregroundColor: Colors.black,
+
+          ),
           body:
           Container(
-            padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
+            padding: EdgeInsets.fromLTRB(0, 150, 0, 0),
             child:
                 Container(
                   decoration: BoxDecoration(
@@ -38,7 +57,7 @@ class BigApp extends StatelessWidget {
                   child: Column(
                     children: [
                       CircleAvatar(
-                        backgroundImage: AssetImage('Assets/Images/avatar.jpg'),
+                        backgroundImage: NetworkImage('https://media.discordapp.net/attachments/843384733135273996/907518700683419678/Untitled_design_4.jpg?width=671&height=671'),
                         radius: 40,
                       ),
                       Container(
@@ -64,11 +83,18 @@ class BigApp extends StatelessWidget {
                         padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                         decoration: BoxDecoration(
                             color: Colors.white,
-                            border: Border.all(
+                            boxShadow: [BoxShadow(
                               color: Colors.grey,
+                              offset: Offset(0.0,1.0),
+                              blurRadius: 6.0,
+                            ),
+                            ],
+                            border: Border.all(
+                              color: Colors.white,
                             ),
                             borderRadius: BorderRadius.all(Radius.circular(20))
                         ),
+
                         width: 350,
                         height: 350,
                         child: Column(
@@ -113,12 +139,21 @@ class BigApp extends StatelessWidget {
           ),
           bottomNavigationBar: BottomNavigationBar(
             backgroundColor: Colors.white,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            elevation: 0,
 
             items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
+                icon: Icon(Icons.home,
+                color: Colors.black,
+                ),
                 title: Text('Home'),
-                backgroundColor: Colors.green
+                backgroundColor: Colors.green,
+              activeIcon: Icon(Icons.home,
+              color: Colors.black,
+              ),
+
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.search),
