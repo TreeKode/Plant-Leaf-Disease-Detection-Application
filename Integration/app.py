@@ -11,7 +11,7 @@ def upload():
         filename = werkzeug.utils.secure_filename(imagefile.filename)
         imagefile.save("./Integration/uploadedimages/"+filename)
         model= werkzeug.utils.secure_filename(dataset.filename)
-        remedy_link ="hello"+model
+        remedy_link ="https://stackoverflow.com/questions/50459272/missingpluginexception-while-using-plugin-for-flutter"
         import prediction
         print(prediction.predict("./Integration/uploadedimages/"+filename))
         return jsonify({

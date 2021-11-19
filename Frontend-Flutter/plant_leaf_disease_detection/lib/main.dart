@@ -1,9 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:url_launcher/url_launcher.dart';
+import 'dart:ui';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
+import 'package:url_launcher/link.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -43,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
   uploadImage() async {
     final request = http.MultipartRequest(
         "POST",
-        Uri.parse("https://6272-182-64-177-25.ngrok.io/upload"));
+        Uri.parse("https://5ed3-182-64-177-25.ngrok.io/upload"));
 
     final headers = {"Content-type": "multipart/form-data"};
     request.files.add(
@@ -85,6 +89,9 @@ class _MyHomePageState extends State<MyHomePage> {
     'Grapes',
   ];
   String dropdownValue = 'Potato' ;
+  openURL()async{
+    await launch(link!);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -271,7 +278,21 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                             Container(
-                              child: Text(link!),
+                              child: MaterialButton(
+                                onPressed: (){
+                                  openURL();
+                                },
+                                child: Text("Click here to See Remedy",
+                                style: TextStyle(
+                                  color: Colors.deepPurple,
+                                  fontStyle: FontStyle.italic,
+                                  decoration: TextDecoration.underline,
+
+                                ),
+
+                                ),
+
+                              )
                             ),
                           ],
                         ),
