@@ -7,14 +7,16 @@ app = Flask(__name__)
 def upload():
     if(request.method == "POST"):
         imagefile = request.files['image']
+        dataset =request.files['object']
         filename = werkzeug.utils.secure_filename(imagefile.filename)
         imagefile.save("./Integration/uploadedimages/"+filename)
+        model= werkzeug.utils.secure_filename(dataset.filename)
+        remedy_link ="hello"+model
         import prediction
-        link="hello"
         print(prediction.predict("./Integration/uploadedimages/"+filename))
         return jsonify({
             "message": prediction.predict("./Integration/uploadedimages/"+filename),
-            "link" : "https://fluttercorner.com/how-to-open-a-web-browser-url-from-flutter-code/"
+            "link" : remedy_link
         })
 
 if __name__=="__main__":
