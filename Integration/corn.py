@@ -10,7 +10,7 @@ from keras.models import Model
 from keras.applications.vgg19 import VGG19
 from keras.models import Model, load_model
 
-ref = {0: 'Cercospora Leaf Spot Gray Leaf Spot', 1: 'Common Rust', 2: 'Northern Leaf Blight', 3: 'Healthy Corn/Maize'}
+ref = {0: 'Cercospora Leaf / Spot Gray Leaf Spot', 1: 'Common Rust', 2: 'Northern Leaf Blight', 3: 'Healthy Corn/Maize'}
 
 model = load_model("./Backend/New Model/corn_95.h5") 
 path = ""

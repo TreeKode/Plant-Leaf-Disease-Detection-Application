@@ -14,6 +14,7 @@ ref = {0: 'Apple Scab', 1: 'Apple Black Rot', 2: 'Cedar Apple Rust', 3: 'Healthy
 
 model = load_model("./Backend/New Model/appol_95.h5") 
 path = ""
+
 def predict(path):
   img = load_img(path, target_size = (256,256))
   i = img_to_array(img)
