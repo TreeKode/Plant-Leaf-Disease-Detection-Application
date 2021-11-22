@@ -17,7 +17,8 @@ def upload():
             print(tomato.predict("./Integration/uploadedimages/"+filename))
             return jsonify({
                 "message": tomato.predict("./Integration/uploadedimages/"+filename),
-                "link" : remedy_link})
+                "link" : tomato.link
+                })
         elif(model == "Apple") :
             import apple
             print(apple.predict("./Integration/uploadedimages/"+filename))
