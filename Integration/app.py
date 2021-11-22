@@ -14,10 +14,24 @@ def upload():
         remedy_link ="https://stackoverflow.com/questions/50459272/missingpluginexception-while-using-plugin-for-flutter"
         if(model == "Tomato") :
             import tomato
-            print(tomato.predict("./Integration/uploadedimages/"+filename))
+            result =tomato.predict("./Integration/uploadedimages/"+filename)
+            remedy_link="Healthy"
+            if(result=='Bacterial Spot'):
+                remedy_link="https://www.growingproduce.com/vegetables/tactics-to-tackle-bacterial-spot-of-tomato/"
+            if str(result)=="Early Blight " :
+                remedy_link="https://gardenerspath.com/how-to/disease-and-pests/early-blight-tomato/"
+            elif(result=="Late Blight "): remedy_link="https://www.gardentech.com/blog/pest-id-and-prevention/fight-blight-on-your-tomatoes"
+            elif(result=="Tomato Leaf Mold "): remedy_link="https://www.gardeningknowhow.com/edible/vegetables/tomato/managing-tomato-leaf-mold.htm"
+            elif(result=="Septoria Leaf Spot "): remedy_link="https://www.thespruce.com/identifying-and-controlling-septoria-leaf-spot-of-tomato-1402974"
+            elif(result=="Spider Mites/Two-Spotted Spider Mite "): remedy_link="https://audreyslittlefarm.com/spider-mites-on-tomato-plants/"
+            elif(result=="Tomato Yellow Leaf Curl Virus "): remedy_link="https://ipm.ifas.ufl.edu/agricultural_ipm/tylcv_home_mgmt.shtml"
+            elif(result=="Tomato Mosaic Virus "): remedy_link="https://www.almanac.com/pest/mosaic-viruses"
+            print(remedy_link)
+            print(result) 
+            
             return jsonify({
-                "message": tomato.predict("./Integration/uploadedimages/"+filename),
-                "link" : tomato.link
+                "message": result,
+                "link" : remedy_link
                 })
         elif(model == "Apple") :
             import apple

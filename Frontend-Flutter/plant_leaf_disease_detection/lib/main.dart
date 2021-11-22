@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
   uploadImage() async {
     final request = http.MultipartRequest(
         "POST",
-        Uri.parse("https://14d9-182-64-177-25.ngrok.io/upload"));
+        Uri.parse("https://438a-182-64-177-25.ngrok.io/upload"));
 
     final headers = {"Content-type": "multipart/form-data"};
     request.files.add(
@@ -317,7 +317,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             value: value,
                               child:Text(value,
                                 style: TextStyle(
-                                  fontSize: 25,
+                                  fontSize: 20,
                                 ),
 
                               ) );
