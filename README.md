@@ -1,4 +1,4 @@
-#About
+### About
 
 Plant Leaf Disease Detection is an application made to detect and identify plant leaf diseases and find a cure. The deep learning models were created using Tensorflow and (Keras, n.d.) open-source libraries. First, the models were trained by using the leaf databases (found in Kaggle, FiveThirtyEight.com, Data.gov, www.data-is-plural.com, Quandl.com, Socrata.com and Google Public Datasets). 
 The models were continuously trained with as many datasets as we could find and a sharp increase in accuracy curve was observed. Simultaneously, the frontend was created using Flutter and some of most modern libraries available for Android and IOS devices. A Flask-Ngrok hybrid server was used to connect the Frontend and Backend together. 
