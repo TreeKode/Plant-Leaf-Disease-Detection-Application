@@ -19,7 +19,7 @@ class homepage extends StatelessWidget {
   uploadImage() async {
     final request = http.MultipartRequest(
         "POST",
-        Uri.parse("https://438a-182-64-177-25.ngrok.io/upload"));
+        Uri.parse("http://localhost:4000/upload"));
 
     final headers = {"Content-type": "multipart/form-data"};
     request.files.add(
@@ -112,7 +112,7 @@ class homepage extends StatelessWidget {
                     CircleAvatar(
                       backgroundColor: Colors.white,
                       backgroundImage: NetworkImage(
-                          'https://cdn.discordapp.com/attachments/911339738638737489/911340750527160350/4.jpg'),
+                          'https://media.discordapp.net/attachments/1043380063145566291/1043429001013764187/unknown.png'),
                       radius: 40,
                     ),]
                   else   if(dropdownValue=='Grapes')...[

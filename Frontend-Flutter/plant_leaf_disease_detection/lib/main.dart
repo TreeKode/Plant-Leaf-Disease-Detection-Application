@@ -44,11 +44,12 @@ class _MyHomePageState extends State<MyHomePage> {
   String? message = "";
 
   String? link = "";
+  int counter=1;
 
   uploadImage() async {
     final request = http.MultipartRequest(
         "POST",
-        Uri.parse("https://438a-182-64-177-25.ngrok.io/upload"));
+        Uri.parse("https://811a-2409-4050-dc5-71ce-6da8-f81f-901c-bb55.in.ngrok.io/upload"));
 
     final headers = {"Content-type": "multipart/form-data"};
     request.files.add(
@@ -72,6 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
     http.Response res = await http.Response.fromStream(response);
     final resJson = jsonDecode(res.body);
     message = resJson['message'];
+
     link = resJson['link'];
     setState(() {});
   }
@@ -108,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           // leading: Icon(Icons.seven_mp_outlined),
           brightness: Brightness.light,
-          title: const Text('TreeKode',
+          title: const Text('Disease Detector App',
 
               style: TextStyle(
               fontFamily: ('Work_Sands'),
@@ -146,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         CircleAvatar(
                           backgroundColor: Colors.white,
                           backgroundImage: NetworkImage(
-                              'https://cdn.discordapp.com/attachments/911339738638737489/911340749822521344/2.jpg'),
+                              'https://cdn.discordapp.com/attachments/1043380063145566291/1043380367278743652/unknown.png'),
                           radius: 40,
                         ),
                       ] else   if(dropdownValue=='Corn')...[
@@ -169,7 +171,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         CircleAvatar(
                           backgroundColor: Colors.white,
                         backgroundImage: NetworkImage(
-                        'https://cdn.discordapp.com/attachments/911339738638737489/911340750527160350/4.jpg'),
+                        'https://media.discordapp.net/attachments/1043380063145566291/1043380485516185600/unknown.png'),
                         radius: 40,
                         ),]
                                     else   if(dropdownValue=='Grapes')...[
@@ -279,7 +281,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                   Container(
                                     child: Text(
-                                      message!,
+                                      "No Disease Detected",
                                       style: TextStyle(
                                         color: Colors.red,
                                         fontSize: 25,
@@ -339,7 +341,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),] else if(currentIndex==1)...[
 
-      ] else if(currentIndex==2)...[
+      ] else if(currentIndex==2 )...[
         Center(
           child: Column(
             children: [
@@ -404,7 +406,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                   padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
                   child :
-                  Image.network('https://cdn.discordapp.com/attachments/911339738638737489/912391480801382520/Untitled_design_4.png'),
+                  Image.network('https://media.discordapp.net/attachments/1043380063145566291/1043432427424595968/image.png'),
 
                 ),
                 Container(
