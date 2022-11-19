@@ -9,3 +9,4 @@ This enabled us to achieve state-of-the-art deep learning capabilities and reach
 This would be a significant step towards digitalization of the agricultural industries of India, which have remained stagnant in terms of digitalization. This is also a significant step considering the low production costs and we hope that this can be delivered free of cost to the poor farmers who suffer greatly from the diseases of plant leaves. 
 <br>
 So far, we have 5 working models that detect diseases for 5 different leaves. More models are being trained and we hope to deploy them and continuously integrate with our frontend. 
+<br>
